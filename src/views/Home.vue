@@ -36,27 +36,25 @@
           </div>
 
           <div class="content">
-            <p>
-              <button class="button is-secondary is-large is-fullwidth has-text-weight-bold">
-                <i class="fab fa-instagram"></i>
-                &nbsp;
-                Sign up via Instagram
-              </button>
-
-              <button class="button is-secondary is-large is-fullwidth is-loading"></button>
-
+            <p v-if="isConnected">
               <button class="button is-success is-large is-fullwidth has-text-weight-bold">
                 <i class="far fa-check-circle"></i>
                 &nbsp;
                 Account Created
               </button>
-
-              <button class="button is-danger is-large is-fullwidth has-text-weight-bold">
-                <i class="fas fa-exclamation-circle"></i>
-                &nbsp;
-                Please Try Again!
-              </button>
             </p>
+
+            <!--
+              TODO: Optionally restyle the button. Not needed though.
+            -->
+            <div
+              v-else
+              class="fb-login-button"
+              data-size="large"
+              data-button-type="login_with"
+              data-auto-logout-link="false"
+              data-use-continue-as="true"
+            ></div>
 
             <p class="has-text-grey-lighter is-size-7">
               By signing up you agree to Muffin <u>Terms and onditions</u> and <u>Privacy policy</u>
@@ -75,6 +73,13 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class extends Vue {
-  //
+
+  /**
+   * Whether user approved Muffin.
+   *
+   * TODO: Load this from store.
+   */
+  public isConnected: boolean = false
+
 }
 </script>

@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/chai": "^4.1.0",
+    "@types/facebook-js-sdk": "^3.2.1",
     "@types/mocha": "^5.2.4",
     "@vue/cli-plugin-babel": "^3.4.0",
     "@vue/cli-plugin-pwa": "^3.4.0",
